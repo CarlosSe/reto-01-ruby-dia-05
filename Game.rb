@@ -6,7 +6,8 @@ class Game
     game_board = CreateBoard.new
     game = game_board.create_board(value: 6, number: 0, board: [], row: [])
     search = SearchNeighbors.new
-    neighbors = search.iterate(game: game, size: 6, start: 0)
+    neighbors = search.iterate(game: game, size: 6, start: 0, count: 0, list_neighbors: [])
+    puts "#{neighbors}"
   end
 end
 

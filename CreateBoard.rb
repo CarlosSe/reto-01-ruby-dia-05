@@ -3,8 +3,7 @@ class CreateBoard
 
   def create_board(value:, number:, board:, row:)
     return board if value == number
-    row = create_row(value: value, number: 0, row: [], current: number)
-    board[number] = row
+    board[number] = create_row(value: value, number: 0, row: [], current: number)
     create_board(value: value, number: number.next, board: board, row: [])
   end
 
