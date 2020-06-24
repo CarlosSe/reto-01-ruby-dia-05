@@ -11,7 +11,7 @@ class SearchNeighbors < Struct.new(:type)
       for j in (index_x - 1)..(index_x + 1)
         validate_x = isValid.validate(position: j)
         validate_y = isValid.validate(position: i)
-        contador += game[i][j].value
+        (validate_x && validate_y) ? contador += game[i][j].value : next
       end
     end
     contador 
